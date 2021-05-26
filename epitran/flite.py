@@ -201,7 +201,7 @@ class FliteLexLookup(Flite):
     def english_g2p(self, text):
         text = self.normalize(text).lower()
         try:
-            arpa_text = subprocess.check_output(['lex_lookup', text])
+            arpa_text = subprocess.check_output(['/home/aip000/tts/software/flite/testsuite/lex_lookup', text])
             arpa_text = arpa_text.decode('utf-8')
         except OSError:
             logging.warning('lex_lookup (from flite) is not installed.')
